@@ -22,6 +22,8 @@ The audit cache, upstream archive, and original source CSVs remain in ignored lo
 python3 scripts/build_source_audit.py
 python3 scripts/prepare_dataset.py
 python3 -m unittest discover -s tests -v
+python3 huggingface/reconstruct.py --data-dir huggingface/data --output-dir .private/whole-dataset-check
+python3 scripts/verify_reconstruction.py
 ```
 
 `build_source_audit.py` uses the reviewed per-paper primary metadata in `.private/source_audit/`. It exports metadata, not raw article text. Preparation fails if audit coverage, keys, or source hashes no longer match. It retains all 1,750 evaluation rows and documented quality flags. Changing source decisions requires reviewing their evidence and updating documentation and counts together.
@@ -42,6 +44,7 @@ LICENSE.md
 CODE_LICENSE.txt
 THIRD_PARTY_NOTICES.md
 RECONSTRUCTION.md
+VERIFICATION.md
 reconstruct.py
 data/items.jsonl
 data/annotations.jsonl
@@ -72,3 +75,5 @@ The clean dataset was made public on November 9, 2026 at [Guo-medicalAI/llm-eval
 The published script was downloaded without credentials and run against the pinned public release. It reconstructed 50/50 exact item records and joined all 1,750 evaluations. Every value in the 37-column reconstructed item CSV matches the original canonical CSV. The server-side viewer initially reported `ResponseNotReady` while processing the newly public dataset; this is a service preparation state rather than a reported data-format error.
 
 Anonymous Python `load_dataset` verification also passed for all three pinned public configurations: 50 items, 1,750 annotations, and 50 sources. The item view has exactly 21 null abstract/human-summary pairs, as intended.
+
+The subsequent whole-input comparison verifies all 1,850 item values and 22,750 numeric evaluation values, all participant mappings, all 1,750 familiarity values, and all 5,250 joined text values. It also documents revised-column selection and excluded private columns. See [VERIFICATION.md](../huggingface/VERIFICATION.md). The journal references and verification report were published in a documentation-only Hub update, commit `fe7dec537f0056f9effb45f46d0cd02614fe1eb9`; the released data and reconstruction code are unchanged.

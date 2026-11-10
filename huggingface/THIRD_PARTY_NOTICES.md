@@ -1,6 +1,6 @@
 # CELLS attribution and notice
 
-CELLS was introduced by Yue Guo, Wei Qiu, Gondy Leroy, Sheng Wang, and Trevor Cohen in [Retrieval augmentation of large language models for lay language generation](https://arxiv.org/abs/2211.03818).
+CELLS was introduced by Yue Guo, Wei Qiu, Gondy Leroy, Sheng Wang, and Trevor Cohen in [Retrieval augmentation of large language models for lay language generation](https://www.sciencedirect.com/science/article/pii/S1532046423003015), *Journal of Biomedical Informatics*, 149, 104580 (2024), [DOI: 10.1016/j.jbi.2023.104580](https://doi.org/10.1016/j.jbi.2023.104580).
 
 Repository: [LinguisticAnomalies/pls_retrieval](https://github.com/LinguisticAnomalies/pls_retrieval). Pinned revision: `a54b1ae8c2a7c2d7d14365df2b84584348e9e6ba`.
 

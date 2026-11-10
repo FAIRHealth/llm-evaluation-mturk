@@ -8,7 +8,7 @@ All 50 abstract/human-summary pairs were matched to the original [CELLS metadata
 
 Every item has a metadata CSV member and 1-based data-row locator. Some article pairs also appear in another CELLS split; the frozen manifest records the selected exact location. Study `index` values are preserved but are not asserted to be universal CELLS identifiers.
 
-Titles were resolved through the [Europe PMC API](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1073/pnas.1912409116&format=json&resultType=core), choosing the published MED record rather than a same-title preprint. HTML typography is ignored when comparing titles. DOI records were checked through [Crossref's publisher-deposited metadata API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/). Every manifest row includes its actual evidence URLs.
+Titles were resolved through the [Europe PMC API](https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1073/pnas.1912409116&format=json&resultType=core), choosing the published MED record. HTML typography is ignored when comparing titles. DOI records were checked through [Crossref's publisher-deposited metadata API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/). Every manifest row includes its actual evidence URLs.
 
 The Cochrane item had a blank title in CELLS. Its content was matched to the review and [official Cochrane evidence page](https://www.cochrane.org/evidence/CD008991_can-inserting-cervical-stitch-prevent-early-births-single-babies), resolving DOI `10.1002/14651858.CD008991.pub3`. Its source record is metadata-only in this release. The review was amended after the corpus snapshot, so present-day publisher text is not assumed to reproduce the evaluated strings.
 

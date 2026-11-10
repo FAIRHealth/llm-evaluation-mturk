@@ -4,7 +4,7 @@ Data and release preparation for **Are LLM-generated plain language summaries tr
 
 [Published paper](https://www.sciencedirect.com/science/article/pii/S1532046426000626) · [DOI](https://doi.org/10.1016/j.jbi.2026.105038) · [GitHub repository](https://github.com/FAIRHealth/llm-evaluation-mturk) · [Dataset card](huggingface/README.md) · [Data dictionary](huggingface/DATA_DICTIONARY.md)
 
-Published in *Journal of Biomedical Informatics*, **179**, article 105038 (July 2026). The [2025 preprint](https://arxiv.org/abs/2505.10409) remains available as an earlier version.
+Published in *Journal of Biomedical Informatics*, **179**, article 105038 (July 2026), [DOI: 10.1016/j.jbi.2026.105038](https://doi.org/10.1016/j.jbi.2026.105038).
 
 This project supports research on how subjective quality ratings relate to reader comprehension of biomedical plain language summaries (PLSs). It pairs scientific abstracts and summary variants with human evaluation scores.
 
@@ -68,7 +68,7 @@ Python 3.9+ is sufficient. The script automatically downloads the public dataset
 - `reconstructed/evaluations_complete.csv`: all 1,750 evaluations joined to their texts and article identifiers.
 - `reconstructed/reconstruction_report.json`: completeness and exact-match checks.
 
-It was checked against every original public item value: 50/50 rows match exactly. Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
+It was checked against all eight original input CSVs: every value in the 37 public item columns and every numeric evaluation value matches, all 1,750 evaluations are preserved, and participant grouping is intact. The files use the revised question values, omit superseded/internal columns, and replace worker IDs with pseudonyms. [Full comparison and intentional differences](huggingface/VERIFICATION.md). Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
 
 ## Prepare the data locally
 

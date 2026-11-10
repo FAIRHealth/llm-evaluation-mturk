@@ -13,7 +13,6 @@ tags:
   - plain-language-summaries
   - human-evaluation
   - comprehension
-  - arxiv:2505.10409
 size_categories:
   - 1K<n<10K
 configs:
@@ -97,7 +96,7 @@ The script combines the release with the exact source strings in the pinned, pub
 - `reconstructed/evaluations_complete.csv`: all 1,750 evaluations joined to the abstract, human PLS, evaluated summary, and identifiers.
 - `reconstructed/reconstruction_report.json`: completeness, retrieval method, and original text-hash verification for every item.
 
-Every value in all 37 reconstructed item columns was compared with the original canonical CSV: **50/50 rows match exactly**. Source text is retrieved, not regenerated. Internal revision notes and original worker IDs are excluded.
+The comparison covers all eight original input CSVs: **all 1,850 item-field values and 22,750 numeric evaluation values match**, all 1,750 evaluations are preserved, and participant grouping is intact. The item table uses the selected revised question values and excludes superseded question columns, three internal note columns, and original worker IDs. Source text is retrieved, not regenerated. [Full verification and intentional differences](VERIFICATION.md).
 
 A DOI identifies an article but does not guarantee a PLS, access, or the evaluated wording. The pinned CELLS route is the exact-reproduction path. An optional direct-DOI mode reports unavailable or changed text explicitly. [Complete instructions](RECONSTRUCTION.md).
 

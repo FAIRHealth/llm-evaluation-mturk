@@ -14,14 +14,16 @@ These observations concern the eight local source CSVs inspected for this candid
 | Annotation multiplicity | Five per item in six conditions; simplification has 42 items with five, four with four, and four with six | Simplification does not uniformly have five evaluations per item |
 | Blank familiarity | Nine rows | Exported as null |
 | Zero ratings | 35 rows contain at least one zero | Outside the intended 1-5 scale; missing-value semantics unknown |
-| Incorrect attention checks | 374 rows with code zero | Retained in this candidate; public analysis should state its quality filter |
+| Incorrect attention checks | 508 rows with numeric code zero | Retained in this candidate; public analysis should state its quality filter |
 | Simplification `wmd_recall` | One distinct value across all 250 rows, approximately 0.483615 | Suspected export or calculation issue; upstream code is needed to diagnose it |
 
 Zero counts by field are 13 for simplicity, 12 for coherence, five for informativeness, three for background, and six for factual alignment. A row may have zeros in more than one field.
 
 ## Relationship to the paper
 
-The [2025 preprint's Results section](https://arxiv.org/html/2505.10409v1#S2) reports 1,346 complete annotations and a stricter subset of 459, using attention-check and completion-time criteria. These local exports do not identify either subset or include the original analysis script. The available fields are insufficient to establish the complete-case definition and reproduce the exclusions exactly. Neither subset is manufactured by this preparation step. These subset figures were checked against the preprint, not the final journal full text. The primary publication is the [2026 Journal of Biomedical Informatics article](https://www.sciencedirect.com/science/article/pii/S1532046426000626), [DOI: 10.1016/j.jbi.2026.105038](https://doi.org/10.1016/j.jbi.2026.105038).
+The associated publication is the [2026 Journal of Biomedical Informatics article](https://www.sciencedirect.com/science/article/pii/S1532046426000626), [DOI: 10.1016/j.jbi.2026.105038](https://doi.org/10.1016/j.jbi.2026.105038). The supplied exports contain 1,750 evaluations but do not identify the paper's analysis-subset membership or include the original analysis script. The available fields are insufficient to establish the exact complete-case and quality-control exclusions. This release does not manufacture those subsets or claim to reproduce the paper's final analysis population.
+
+A full comparison with all eight original input files confirms that reconstruction preserves the selected public item fields and all evaluation values. The attention-check count above was corrected from an earlier documentation count that counted only the literal string `0`, missing values written as `0.0`. The actual numeric total is 508; no stored score was changed. [Verification details](VERIFICATION.md).
 
 ## Question provenance
 
