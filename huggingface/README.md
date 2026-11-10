@@ -96,7 +96,7 @@ The script combines the release with the exact source strings in the pinned, pub
 - `reconstructed/evaluations_complete.csv`: all 1,750 evaluations joined to the abstract, human PLS, evaluated summary, and identifiers.
 - `reconstructed/reconstruction_report.json`: completeness, retrieval method, and original text-hash verification for every item.
 
-The comparison covers all eight original input CSVs: **all 1,850 item-field values and 22,750 numeric evaluation values match**, all 1,750 evaluations are preserved, and participant grouping is intact. The item table uses the selected revised question values and excludes superseded question columns, three internal note columns, and original worker IDs. Source text is retrieved, not regenerated. [Full verification and intentional differences](VERIFICATION.md).
+The comparison covers all eight original input CSVs: **all 1,850 item-field values and 22,750 numeric evaluation values match**, all 1,750 evaluations are preserved, and participant grouping is intact. Source text is retrieved, not regenerated. [Reconstruction verification](VERIFICATION.md).
 
 A DOI identifies an article but does not guarantee a PLS, access, or the evaluated wording. The pinned CELLS route is the exact-reproduction path. An optional direct-DOI mode reports unavailable or changed text explicitly. [Complete instructions](RECONSTRUCTION.md).
 
@@ -108,7 +108,7 @@ All exported evaluation rows are preserved. Source worker IDs are replaced by ra
 
 The exports contain 151 distinct source worker IDs, four extra exact duplicate rows, and 35 rows with zero-valued ratings. The simplification `wmd_recall` is constant. The original score implementations and paper-subset membership are absent. Raw selected answers, free-text recall responses, demographics, and the full automated metric table are also absent. [Quality notes](QUALITY.md).
 
-Canonical questions use the revised values with `_REVISED` removed from field names. Historical correctness scores are unchanged; their administered question version is not recorded. Analyses must not assume those scores were regraded against the current questions.
+Historical correctness scores are unchanged; their administered question version is not recorded. Analyses must not assume those scores were regraded against the current questions.
 
 This collection has only 50 source items and repeated participant measurements. Account for item and participant clustering, state exclusions, and group future data splits by source item. This English-language biomedical benchmark does not establish generalization to other populations or clinical use. Generated content can contain errors.
 

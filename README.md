@@ -68,7 +68,7 @@ Python 3.9+ is sufficient. The script automatically downloads the public dataset
 - `reconstructed/evaluations_complete.csv`: all 1,750 evaluations joined to their texts and article identifiers.
 - `reconstructed/reconstruction_report.json`: completeness and exact-match checks.
 
-It was checked against all eight original input CSVs: every value in the 37 public item columns and every numeric evaluation value matches, all 1,750 evaluations are preserved, and participant grouping is intact. The files use the revised question values, omit superseded/internal columns, and replace worker IDs with pseudonyms. [Full comparison and intentional differences](huggingface/VERIFICATION.md). Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
+It was checked against all eight original input CSVs: every value in the 37 public item columns and every numeric evaluation value matches, all 1,750 evaluations are preserved, and participant grouping is intact. [Reconstruction verification](huggingface/VERIFICATION.md). Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
 
 ## Prepare the data locally
 
