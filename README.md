@@ -70,25 +70,6 @@ Python 3.9+ is sufficient. The script automatically downloads the public dataset
 
 It was checked against all eight original input CSVs: every value in the 37 public item columns and every numeric evaluation value matches, all 1,750 evaluations are preserved, and participant grouping is intact. [Reconstruction verification](huggingface/VERIFICATION.md). Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
 
-## Prepare the data locally
-
-This maintainer workflow requires the original exports and private audit cache, which are not included in this GitHub repository. Dataset users should use the reconstruction command above.
-
-```bash
-python3 scripts/build_source_audit.py
-python3 scripts/prepare_dataset.py
-```
-
-Preparation uses only the Python standard library. It:
-
-1. Backs up the original question CSV to `.private/` without changing its bytes.
-2. Selects revised question, option, and answer values as the canonical fields, removes `_REVISED` columns, and writes `results_llama_mcq_attention_baseline.csv`. Answer positions are derived from the selected options and answer text.
-3. Replaces source `WorkerId` values with random participant IDs. The mapping stays in `.private/participant_ids.json` and is reused on subsequent runs.
-4. Writes `huggingface/data/items.jsonl`, `annotations.jsonl`, and a manifest with counts and SHA-256 checksums. It flags duplicate rows and zero-valued ratings without filtering or changing those source values.
-5. Requires the reviewed `sources.jsonl` audit and removes `abs_text`/`pls_text` from items without established redistribution permission. Missing audit coverage or changed source text causes an error.
-
-**Question version matters:** the annotation exports contain correctness scores, not the selected answers or an administered-question version. Selecting revised question text does not regrade those historical scores. See [question provenance](huggingface/QUALITY.md#question-provenance).
-
 ## Repository layout
 
 ```text
