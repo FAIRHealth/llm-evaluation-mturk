@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+
+# Original participant identifiers and source backups stay local.
+/result_with_workerID/
+/.private/
+/results_llama_mcq_attention_baseline*.csv
+
+# Hugging Face hosts the data; GitHub hosts documentation and preparation code.
+/huggingface/data/
+/reconstructed/
+/huggingface/reconstructed/
