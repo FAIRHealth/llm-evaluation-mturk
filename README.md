@@ -1,6 +1,6 @@
 # Human evaluation of LLM-generated plain language summaries
 
-Data and release preparation for **Are LLM-generated plain language summaries truly understandable? A large-scale crowdsourced evaluation** by Yue Guo, Jae Ho Sohn, Gondy Leroy, and Trevor Cohen.
+Dataset and reconstruction code for **Are LLM-generated plain language summaries truly understandable? A large-scale crowdsourced evaluation** by Yue Guo, Jae Ho Sohn, Gondy Leroy, and Trevor Cohen.
 
 [Published paper](https://www.sciencedirect.com/science/article/pii/S1532046426000626) · [DOI](https://doi.org/10.1016/j.jbi.2026.105038) · [GitHub repository](https://github.com/FAIRHealth/llm-evaluation-mturk) · [Dataset card](huggingface/README.md) · [Data dictionary](huggingface/DATA_DICTIONARY.md)
 
@@ -12,7 +12,7 @@ This project supports research on how subjective quality ratings relate to reade
 
 The dataset is public at [Guo-medicalAI/llm-evaluation-mturk](https://huggingface.co/datasets/Guo-medicalAI/llm-evaluation-mturk), with article-specific source-text licensing and a complete reconstruction script. See the [source audit](huggingface/SOURCE_AUDIT.md).
 
-Hugging Face hosts the data; this GitHub repository contains documentation, the license audit, and preparation/reconstruction code. Dataset files are excluded from Git. The earlier draft is preserved as a private archive because its history contains source text omitted from the public release.
+Hugging Face hosts the data. This GitHub repository provides documentation, source-license information, and the reconstruction script.
 
 ## What is included
 
@@ -63,35 +63,19 @@ python3 huggingface/reconstruct.py
 
 Python 3.9+ is sufficient. The script automatically downloads the public dataset and pinned CELLS archive, checks exact text hashes, and writes:
 
-- `reconstructed/items_complete.csv`: 50 items in the original 37 public columns.
+- `reconstructed/items_complete.csv`: 50 items with 37 columns.
 - `reconstructed/items_complete.jsonl`: complete items plus DOI and license metadata.
 - `reconstructed/evaluations_complete.csv`: all 1,750 evaluations joined to their texts and article identifiers.
 - `reconstructed/reconstruction_report.json`: completeness and exact-match checks.
 
-It was checked against all eight original input CSVs: every value in the 37 public item columns and every numeric evaluation value matches, all 1,750 evaluations are preserved, and participant grouping is intact. [Reconstruction verification](huggingface/VERIFICATION.md). Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
+Reconstruction recovers all 50 items and preserves all 1,750 evaluations and participant groupings. Source text is checked against its recorded hashes. Source rights still apply to reconstructed local files. [Direct DOI retrieval, offline options, and limitations](huggingface/RECONSTRUCTION.md).
 
-## Repository layout
+## Documentation
 
-```text
-README.md                       GitHub overview
-CITATION.bib                    Paper citation
-docs/PUBLISHING.md              Release and maintenance instructions
-scripts/build_source_audit.py   Export the reviewed source audit
-scripts/prepare_dataset.py      Local preparation and validation
-huggingface/reconstruct.py      Complete public reconstruction script
-huggingface/RECONSTRUCTION.md   User instructions and output formats
-huggingface/LICENSE.md          Component-specific dataset terms
-huggingface/CODE_LICENSE.txt    MIT license for code
-huggingface/SOURCE_LICENSES.csv Article-level attribution and decisions
-huggingface/README.md           Hugging Face dataset card
-huggingface/DATA_DICTIONARY.md   Field definitions and condition mapping
-huggingface/QUALITY.md           Observed limitations and provenance
-huggingface/data/               Generated dataset files; ignored by GitHub Git
-result_with_workerID/           Original exports; ignored by Git
-.private/                      Original question backup and ID mapping; ignored by Git
-```
-
-The normalized working CSV is also ignored by Git. Upload only the intended Hugging Face package, following the publishing guide. Keep `.private/` and source worker IDs local.
+- [Data dictionary](huggingface/DATA_DICTIONARY.md): fields, score definitions, and condition mapping.
+- [Reconstruction guide](huggingface/RECONSTRUCTION.md): commands, retrieval options, and output formats.
+- [Dataset quality](huggingface/QUALITY.md): data limitations and analysis considerations.
+- [Source licenses](huggingface/SOURCE_LICENSES.csv): article-level attribution and reuse terms.
 
 ## License and citation
 
